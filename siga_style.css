@@ -1,0 +1,120 @@
+
+/* page */
+
+body {
+    background: #808080;
+}
+
+div.page {
+  background: white;
+  font-family: Arial;
+  display: block;
+  overflow: auto;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  padding: 0.55in;
+}
+
+div.page[data-size="A4"] {  
+  width: 8.3in;
+  height: 11.7in; 
+}
+
+@media print {
+  body, page {
+  margin: 0;
+  box-shadow: 0;
+  }
+}
+
+td {
+  border-radius: 0.25em;
+  border: 1px solid black;
+  text-align: center;
+  font-family: Arial;
+  font-size: 14px;
+}
+
+.heading {
+	color: #e65c00;
+  font-family: 'Alegreya', serif;
+  font-size: 31px;
+}
+
+#logo {
+  max-height: 150px;
+  height : auto;
+  width: 100%
+}
+
+#signlogo {
+  width: 50px
+}
+
+#print {
+  text-decoration: none;
+}
+
+/* content editable */
+
+*[contenteditable] { min-width: 1em; }
+
+*[contenteditable] { cursor: pointer; }
+
+*[contenteditable]:hover, *[contenteditable]:focus, td:hover *[contenteditable], td:focus *[contenteditable], img.hover { background: #DEF; box-shadow: 0 0 1em 0.3em #DEF; }
+
+.b{
+  font-weight: bold;
+}
+
+td textarea {
+    border: none;
+    width: 100%;
+    min-height: 90px;
+    overflow:hidden;
+    display:block;
+}
+
+td input {
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+   text-align: right;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0;
+}
+
+/* backgrounds */ 
+
+.greybg{
+  background:#e6e6e6;
+}
+
+.darkGreyBgWhite{
+  background:#808080;
+  color:white;
+}
+
+@media print {
+  #print {
+    display: none;
+  }
+}
+
+select {
+    /*for firefox*/
+    -moz-appearance: none;
+    /*for chrome*/
+    -webkit-appearance:none;
+    border:none;
+    appearance: none;
+}

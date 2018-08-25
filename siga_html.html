@@ -1,0 +1,330 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SIGA Invoice</title>
+        <link rel="icon" href="SIGAfavicon.png" type="image/png" sizes="16x16">
+        <link rel="stylesheet" href="siga_style.css">
+        <script src="siga_script.js"></script>
+        <link rel="license" href="https://www.opensource.org/licenses/mit-license/">
+        <link href="https://fonts.googleapis.com/css?family=Alegreya:700" rel="stylesheet">
+    </head>
+    <body>
+        <div class="page" data-size="A4">
+            <table style="border: 2px solid black;width : 100%;table-layout: fixed;" cellpadding="2">
+                <tbody>
+                    <tr>
+                        <td rowspan="4" colspan="2">
+                            <img id="logo" src="SIGA_Logo.png">
+                        </td>
+                        <td colspan="18" class="b" style="text-align: right;">ORIGINAL,DUPLICATE,TRIPLICATE</td>
+                    </tr>
+                    <tr>
+                        <td colspan="18">
+                            <div class="heading" class="b"><b>SUCHARITHA INDUSTRIAL GAS AGENCIES</b></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="18" class="b">Shop No. : 32-1-25/63, Nerella Koneru Street, Allipuram, Visakhapatnam-530004.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="18" class="b">sucharitha.industrialgases@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td colspan="8"  class="b" style="text-align: left;">GSTIN : 37ADCPR2737C1ZP</td>
+                        <td colspan="4" bgcolor="black" style="color: white;" class="b">TAX INVOICE</td>
+                        <td colspan="8"  class="b">
+                            <span style="float:left;">
+                                <select class="b">
+                                    <option> </option>
+                                    <option value="Cash">(CASH)</option>
+                                </select>
+                            </span>
+                            <span style="float:right;">Cell : 9848191963</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" colspan="10" contenteditable></td>
+                        <td colspan="3" style="text-align: left;" class="b">Invoice No.<span style="float:right;">:</span></td>
+                        <td colspan="7" contenteditable>SIGA_GST(18-19)_</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: left;" class="b">Date<span style="float:right;">:</span></td>
+                        <td colspan="7" contenteditable></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: left;" class="b">Vehicle No.<span style="float:right;">:</span></td>
+                        <td colspan="7" contenteditable></td>
+                    </tr>
+                    <tr>
+                        <td colspan="10" class="b darkGreyBgWhite">Details of Recipient (Billed to)</td>
+                        <td colspan="10" class="b darkGreyBgWhite">Details of Consignees (Shipped to)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="b" style="text-align: left;">Name<span style="float:right;">:</span></td>
+                        <td colspan="6" contenteditable>
+                            <input type="text" id="nameSourceTextField" onkeyup="changeName();"></input>
+                        </td>
+                        <td colspan="4" class="b" style="text-align: left;">Name<span style="float:right;">:</span></td>
+                        <td colspan="6" contenteditable>
+                            <input type="text" id="nameDestinationTextField" value=""></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="b" style="text-align: left;">Address<span style="float:right;">:</span></td>
+                        <td colspan="6" rowspan="4" contenteditable>
+                            <textarea id="addresssSurceTextField" onkeyup="changeAddress();"></textarea>
+                        </td>
+                        <td colspan="4" class="b" style="text-align: left;">Address<span style="float:right;">:</span></td>
+                        <td colspan="6" rowspan="4" contenteditable>
+                            <textarea id="addressDestinationTextField" contentEditable="true" value=""></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                        <td colspan="4">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                        <td colspan="4">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                        <td colspan="4">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="b" style="text-align: left;">State Code<span style="float:right;">:</span></td>
+                        <td colspan="6" contenteditable>
+                            <input type="text" id="stateSourceTextField" onkeyup="changeState();"></input>
+                        </td>
+                        <td colspan="4" class="b" style="text-align: left;">State Code<span style="float:right;">:</span></td>
+                        <td colspan="6" contenteditable>
+                            <input type="text" id="stateDestinationTextField" value=""></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="b" style="text-align: left;">GSTN/UIN No<span style="float:right;">:</span></td>
+                        <td colspan="6" contenteditable>
+                            <input type="text" id="gstnSourceTextField" onkeyup="changeGSTN();"></input>
+                        </td>
+                        <td colspan="4" class="b" style="text-align: left;">GSTN/UIN No<span style="float:right;">:</span></td>
+                        <td colspan="6" contenteditable>
+                            <input type="text" id="gstnDestinationTextField" value=""></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="b" style="text-align: left;">P.O. No. & Date<span style="float:right;">:</span></td>
+                        <td colspan="6" contenteditable>
+                            <input type="text" id="poSourceTextField" onkeyup="changePO();"></input>
+                        </td>
+                        <td colspan="4" class="b" style="text-align: left;">P.O. No. & Date<span style="float:right;">:</span></td>
+                        <td colspan="6" contenteditable>
+                            <input type="text" id="poDestinationTextField" value=""></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="b darkGreyBgWhite">Description of Items</td>
+                        <td colspan="3" class="b darkGreyBgWhite">HSN Code</td>
+                        <td colspan="2" class="b darkGreyBgWhite">UOM</td>
+                        <td colspan="2" class="b darkGreyBgWhite">Quantity</td>
+                        <td colspan="2" class="b darkGreyBgWhite">Rate</td>
+                        <td colspan="3" class="b darkGreyBgWhite">Amount</td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="b">OXYGEN</td>
+                        <td colspan="3" class="b">28044090</td>
+                        <td colspan="2" contenteditable></td>
+                        <td colspan="2">
+                            <input id="quant1" type="number" oninput="amount1()" onchange="amount1()" style="text-align: center;">
+                        </td>
+                        <td colspan="2">
+                            <input id="rate1" type="number" oninput="amount1()" onchange="amount1()" oninput="amount9()" onchange="amount9()" style="text-align: center;">
+                        </td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="amount1">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="b" contenteditable>ARGON</td>
+                        <td colspan="3" class="b">28042100</td>
+                        <td colspan="2" contenteditable></td>
+                        <td colspan="2">
+                            <input id="quant2" type="number" oninput="amount2()" onchange="amount2()" style="text-align: center;">
+                        </td>
+                        <td colspan="2">
+                            <input id="rate2" type="number" oninput="amount2()" onchange="amount2()" style="text-align: center;">
+                        </td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="amount2">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="b">DISSOLVED ACETYLENE</td>
+                        <td colspan="3" class="b">29012910</td>
+                        <td colspan="2" contenteditable></td>
+                        <td colspan="2">
+                            <input id="quant3" type="number" oninput="amount3()" onchange="amount3()" style="text-align: center;">
+                        </td>
+                        <td colspan="2">
+                            <input id="rate3" type="number" oninput="amount3()" onchange="amount3()" style="text-align: center;">
+                        </td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="amount3">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="b" contenteditable>NITROGEN</td>
+                        <td colspan="3" class="b">28043000</td>
+                        <td colspan="2" contenteditable></td>
+                        <td colspan="2">
+                            <input id="quant4" type="number" oninput="amount4()" onchange="amount4()" style="text-align: center;">
+                        </td>
+                        <td colspan="2">
+                            <input id="rate4" type="number" oninput="amount4()" onchange="amount4()" style="text-align: center;">
+                        </td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="amount4">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="b" contenteditable>LPG (COMMERCIAL)</td>
+                        <td colspan="3" class="b">27111900</td>
+                        <td colspan="2" contenteditable></td>
+                        <td colspan="2">
+                            <input id="quant5" type="number" oninput="amount5()" onchange="amount5()" style="text-align: center;">
+                        </td>
+                        <td colspan="2">
+                            <input id="rate5" type="number" oninput="amount5()" onchange="amount5()" style="text-align: center;">
+                        </td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="amount5">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="b">CARBON DIOXIDE</td>
+                        <td colspan="3" class="b">28112190</td>
+                        <td colspan="2" contenteditable></td>
+                        <td colspan="2">
+                            <input id="quant6" type="number" oninput="amount6()" onchange="amount6()" style="text-align: center;">
+                        </td>
+                        <td colspan="2">
+                            <input id="rate6" type="number" oninput="amount6()" onchange="amount6()" style="text-align: center;">
+                        </td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="amount6">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="b" contenteditable></td>
+                        <td colspan="3" class="b" contenteditable></td>
+                        <td colspan="2" contenteditable></td>
+                        <td colspan="2">
+                            <input id="quant7" type="number" oninput="amount7()" onchange="amount7()" style="text-align: center;">
+                        </td>
+                        <td colspan="2">
+                            <input id="rate7" type="number" oninput="amount7()" onchange="amount7()" style="text-align: center;">
+                        </td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="amount7">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="b" contenteditable></td>
+                        <td colspan="3" class="b" contenteditable></td>
+                        <td colspan="2" contenteditable></td>
+                        <td colspan="2">
+                            <input id="quant8" type="number" oninput="amount8()" onchange="amount8()" style="text-align: center;">
+                        </td>
+                        <td colspan="2">
+                            <input id="rate8" type="number" oninput="amount8()" onchange="amount8()" style="text-align: center;">
+                        </td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="amount8">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" rowspan="7">&nbsp;</td>
+                        <td colspan="3" rowspan="7"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="b" style="text-align: left;">Total Amount before tax<span style="float:right;">:</span></td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="totalAmountbTax">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="b" style="text-align: right;">CGST @</td>
+                        <td colspan="2" contenteditable id="cper" oninput="ctaxfunc()" onchange="ctaxfunc()"></td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="ctax">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="b" style="text-align: right;">SGST @</td>
+                        <td colspan="2" contenteditable id="sper" oninput="staxfunc()" onchange="staxfunc()"></td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="stax">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="b" style="text-align: right;">IGST @</td>
+                        <td colspan="2" contenteditable id="iper" oninput="itaxfunc()" onchange="itaxfunc()"></td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="itax">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="b" style="text-align: left;">Total Tax Amount<span style="float:right;">:</span></td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="totalTax">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="b darkGreyBgWhite">Invoice Total<span style="float:right;">:</span></td>
+                        <td colspan="3" style="text-align: right;" class="greybg">
+                            <span data-prefix>&#x20B9;</span>
+                            <span id="invoice">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="b" style="text-align: left;">As per DC No.<span style="float:right;">:</span></td>
+                        <td colspan="5"></td>
+                        <td colspan="9" class="b">for Sucharitha Industrial Gas Agencies</td>
+                    </tr>
+                    <tr>
+                        <td colspan="11" contenteditable>&nbsp;</td>
+                        <td colspan="9" rowspan="2">
+                            <img id="signlogo" src="SIGNATURE.png">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="b" style="text-align: left;">Invoice Amount in Words<span style="float:right;">:</span></td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="11" rowspan="2" id="word"></td>
+                        <td colspan="9" class="b">Authorised Signatory</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="20" class="b darkGreyBgWhite">Save the Earth. Go Paperless.<span style="float:right;"><button id="print" onClick="window.print();">Save</button></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
